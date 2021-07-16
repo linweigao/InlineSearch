@@ -1,0 +1,312 @@
+.instagram-ext-options {
+  margin-left: 8px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.instagram-ext-options .new {
+  position: absolute;
+  color: white;
+  font: icon;
+  font-size: 10px;
+  padding: 0px 1px;
+  right: -5px;
+  bottom: 0px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: red;
+}
+
+.instagram-ext-options.desktop {
+  margin-left: 30px
+}
+
+.instagram-ext-options img {
+  width: 28px;
+  height: 28px;
+}
+
+/* The Modal (background) */
+.instagram-ext-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.instagram-ext-modal .content {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 800px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* Modal Header */
+.instagram-ext-modal .header {
+  display: block;
+  padding: 20px;
+  background-color: #FF704D;
+  color: white;
+}
+
+.instagram-ext-modal .header h2 {
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Modal Body */
+.instagram-ext-modal.body {
+  padding: 2px 16px;
+}
+
+.instagram-ext-modal .footer {
+  padding: 2px 16px;
+  background-color: #FF704D;
+  color: white;
+}
+
+.instagram-ext-modal .footer h3{
+  padding: 8px 10px;
+  text-align: right;
+}
+
+/* The Close Button */
+.instagram-ext-modal .close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.instagram-ext-modal .close:hover,
+.instagram-ext-modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.instagram-ext-collapsible {
+  display: block;
+  background-color: #777;
+  color: white;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.instagram-ext-collapsible .hint {
+  font-size: 16px;
+  color: antiquewhite;
+  padding-left: 4px;
+}
+
+.instagram-ext-collapsible-content {
+  padding: 10px 18px 10px 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.instagram-ext-collapsible-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.instagram-ext-checkbox {
+  display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.instagram-ext-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.instagram-ext-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.instagram-ext-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.instagram-ext-checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.instagram-ext-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.instagram-ext-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.instagram-ext-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.instagram-ext-miniPlayer {
+  border: grey 1px solid;
+  position: fixed;
+  z-index: 2025;
+  right: 12px;
+  bottom: 45px;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+}
+
+.instagram-ext-miniPlayer .close {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  right:0;
+  width: 28px;
+  height: 28px;
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.instagram-ext-miniPlayer .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  transition: opacity .2s cubic-bezier(0.4,0.0,0.2,1) .1s;
+  opacity: 1;
+}
+.instgram-ext-miniPlayerBtn {
+  position: absolute;
+  z-index: 9999;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Style override the DM window */
+div.e9_tN {
+  max-width: 100%;
+}
+
+/* Remove this because the text wrap on the DM won't work
+div._8_yLp {
+  max-width: 100%;
+} 
+*/
+
+div._8_yLp img {
+  min-height: 236px !important;
+  min-width: 236px !important;
+  object-fit: contain;
+}
+
+div.IEL5I {
+  margin: 0 20%;
+}
+
+/* div.y9Y0k {
+  justify-content: initial;
+  align-items: initial;
+}
+
+div.y9Y0k div.qJfNm {
+  max-height: 800px
+}
+*/
+
+/* Tag People */
+div.qJfNm img.lki6T {
+  height: 100%;
+}
+
+div.y9Y0k::after {
+  padding-bottom: calc(100vh - 105px) !important;
+}
+
+/* New Photo Post */
+div.yOb8Z {
+  padding-bottom: calc(100vh - 105px) !important;
+}
+
+div.Iv5U2 {
+  padding-bottom: calc(100vh - 105px) !important;
+}
+
+div.l4jJL {
+  padding-bottom: 0px;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "web-instagram-extension",
+  "version": "1.0.0",
+  "description": "View instagram on desktop with full mobile feature",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
+    "dev": "webpack --config webpack/webpack.dev.js",
+    "build": "rm -rf ./dist && webpack --config webpack/webpack.prod.js",
+    "package": "node scripts/versionBuild.js && npm run build && node scripts/packageZip.js"
+  },
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/jogao1983/web-instagram-extension"
+  },
+  "dependencies": {
+    "anchorme": "^1.1.2",
+    "object-assign": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "~0.0.63",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.21.0",
+    "ts-import-plugin": "^1.5.4",
+    "ts-loader": "~4.2.0",
+    "typescript": "~2.8.1",
+    "webpack": "~4.5.0",
+    "webpack-cli": "~2.0.14",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "~4.1.2",
+    "zip-folder": "^1.0.0"
+  }
+}
