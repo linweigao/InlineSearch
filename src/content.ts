@@ -1,26 +1,44 @@
 console.log('Inline Search')
+const divId = "inline-search-div";
+const frameId = "ineline-search-iframe"
 
-window.addEventListener("load", function load(event) {
-  window.removeEventListener("load", load, false); //remove listener, no longer needed
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.inlineSearchExt) {
+    let container = document.getElementById(divId) as HTMLDivElement;
+    if (!container) {
+      container = createInlineWindow();
+    } else {
+      if (container.style.display === "none") {
+        container.style.display = "";
+      } else {
+        container.style.display = "none";
+      }
+    }
 
-  createInlineWindow();
+    const iframe = document.getElementById(frameId) as HTMLFrameElement;
+    iframe.src = "https://www.google.com/search?q=" + encodeURIComponent(request.inlineSearchExt);
+  }
 })
 
 function createInlineWindow() {
-  let div = document.createElement('div');
+  const div = document.createElement('div');
+  div.id = divId;
   div.style.position = "fixed";
-  div.style.width = "400px";
+  div.style.width = "600px";
   div.style.height = "100%";
   div.style.top = "0";
   div.style.right = "0";
+  div.style.zIndex = "99999999";
 
   document.body.appendChild(div);
 
   let iframe = document.createElement("iframe");
-  iframe.src = "https://www.google.com";
+  iframe.id = frameId;
   iframe.width = "100%";
   iframe.height = "100%";
 
   div.appendChild(iframe)
+
+  return div;
 }
 
