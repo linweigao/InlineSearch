@@ -7,16 +7,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let container = document.getElementById(divId) as HTMLDivElement;
     if (!container) {
       container = createInlineWindow();
-    } else {
-      if (container.style.display === "none") {
-        container.style.display = "";
-      } else {
-        container.style.display = "none";
-      }
     }
-
+    container.style.display = "";
     const iframe = document.getElementById(frameId) as HTMLFrameElement;
     iframe.src = "https://www.google.com/search?q=" + encodeURIComponent(request.inlineSearchExt);
+  }
+
+  if (request.closeInlineSearchExt) {
+    let container = document.getElementById(divId) as HTMLDivElement;
+    if (container) {
+      container.style.display = "none";
+    }
   }
 })
 
