@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -10,10 +10,13 @@ module.exports = merge(common, {
     plugins: [
         new CopyWebpackPlugin([
             {
-                context: 'static/dev',
-                from: 'options.html',
-                to: '../',
-                force: true
+                patterns: [{
+                    context: 'static/dev',
+                    from: 'options.html',
+                    to: '../',
+                    force: true
+                }
+                ]
             }
         ])
     ]

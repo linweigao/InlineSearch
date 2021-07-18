@@ -1,7 +1,7 @@
 {
-  "name": "web-instagram-extension",
+  "name": "inline-search-ext",
   "version": "1.0.0",
-  "description": "View instagram on desktop with full mobile feature",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
@@ -12,24 +12,24 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/jogao1983/web-instagram-extension"
+    "url": "https://gitlab.com/jogao1983/InlineSearch"
   },
   "dependencies": {
-    "anchorme": "^1.1.2",
+    "anchorme": "^2.1.2",
     "object-assign": "^4.1.1"
   },
   "devDependencies": {
-    "@types/chrome": "~0.0.63",
-    "copy-webpack-plugin": "^4.5.2",
-    "css-loader": "^1.0.0",
-    "style-loader": "^0.21.0",
+    "@types/chrome": "^0.0.147",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.1.0",
+    "style-loader": "^3.1.0",
     "ts-import-plugin": "^1.5.4",
-    "ts-loader": "~4.2.0",
-    "typescript": "~2.8.1",
-    "webpack": "~4.5.0",
-    "webpack-cli": "~2.0.14",
+    "ts-loader": "~9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "~5.45.1",
+    "webpack-cli": "~4.7.2",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "~4.1.2",
+    "webpack-merge": "~5.8.0",
     "zip-folder": "^1.0.0"
   }
 }

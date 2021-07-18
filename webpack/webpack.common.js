@@ -40,12 +40,12 @@ module.exports = {
     plugins: [
         // exclude locale files in moment
         new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-        new CopyWebpackPlugin([
+        new CopyWebpackPlugin(
             {
-                context: 'static',
-                from: '*',
-                to: '../'
+                patterns: [
+                    { context: 'static', from: path.resolve(__dirname, '../static/*.*'), to: '../' }
+                ]
             }
-        ])
+        )
     ]
 };

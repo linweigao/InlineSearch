@@ -17,5 +17,6 @@
     // Defines space handling before function argument parentheses. Requires TypeScript >= 2.1.5.
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     // Defines space handling after the constructor keyword. Requires TypeScript >= 2.3.0.
-    "javascript.format.insertSpaceAfterConstructor": true
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "files.autoSave": "onFocusChange"
 }
