@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Inline Search",
-    "description": "",
+    "description": "Right click to search your selection in the same page. Big screen must have!",
     "version": "1.0.0",
     "browser_action": {
         "default_icon": "inlinesearch-48.png"
