@@ -25,7 +25,7 @@ chrome.webRequest.onHeadersReceived.addListener(info => {
   let retHeaders = headers.filter(header => {
     const name = header.name.toLowerCase();
     const isCSP = name === CSPOptions;
-    const isXFrame = info.url.indexOf("google.com") > 1 && name === xframOptions;
+    const isXFrame = name === xframOptions;
 
     return !isCSP && !isXFrame;
   });
