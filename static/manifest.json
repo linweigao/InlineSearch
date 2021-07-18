@@ -4,12 +4,12 @@
     "description": "",
     "version": "1.0.0",
     "browser_action": {
-        "default_icon": "instagram-48.png"
+        "default_icon": "inlinesearch-48.png"
     },
     "icons": {
-        "16": "instagram-16.png",
-        "48": "instagram-48.png",
-        "128": "instagram-128.png"
+        "16": "inlinesearch-16.png",
+        "48": "inlinesearch-48.png",
+        "128": "inlinesearch-128.png"
     },
     "content_scripts": [
         {
