@@ -1,8 +1,13 @@
 function openSearchWindow(searchKey) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { inlineSearchExt: searchKey });
+    chrome.tabs.sendMessage(tabs[0].id, { inlineSearchExt: searchKey, inlineSearchExtOpen: true });
   });
 }
+
+// Called when the user clicks on the browser action icon.
+chrome.browserAction.onClicked.addListener(function (tab) {
+  openSearchWindow("");
+});
 
 function onInstalled(details: chrome.runtime.InstalledDetails) {
   chrome.contextMenus.create({

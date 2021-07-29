@@ -3,20 +3,17 @@ const divId = "inline-search-div";
 const frameId = "ineline-search-iframe"
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.inlineSearchExt) {
+  if (request.inlineSearchExtOpen) {
     let container = document.getElementById(divId) as HTMLDivElement;
     if (!container) {
       container = createInlineWindow();
     }
     container.style.display = "";
     const iframe = document.getElementById(frameId) as HTMLFrameElement;
-    iframe.src = "https://www.google.com/search?q=" + encodeURIComponent(request.inlineSearchExt);
-  }
-
-  if (request.closeInlineSearchExt) {
-    let container = document.getElementById(divId) as HTMLDivElement;
-    if (container) {
-      container.style.display = "none";
+    if (request.inlineSearchExt) {
+      iframe.src = "https://www.google.com/search?q=" + encodeURIComponent(request.inlineSearchExt);
+    } else {
+      iframe.src = "https://www.google.com"
     }
   }
 })
