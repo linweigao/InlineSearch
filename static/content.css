@@ -1,4 +1,4 @@
-#inline-search-div .close {
+#inline-search-ext-div .inline-search-ext-close {
   position: absolute;
   z-index: 2147483646;
   top: 0;
@@ -12,7 +12,35 @@
   cursor: pointer;
 }
 
-#inline-search-div .mask {
+#inline-search-ext-div .inline-search-ext-back {
+  position: absolute;
+  z-index: 2147483646;
+  top: 0;
+  left:5px;
+  width: 28px;
+  height: 28px;
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#inline-search-ext-div .inline-search-ext-forward {
+  position: absolute;
+  z-index: 2147483646;
+  top: 0;
+  left: 45px;
+  width: 28px;
+  height: 28px;
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#inline-search-ext-div .inline-search-ext-mask {
   position: absolute;
   top:0;
   right:0;

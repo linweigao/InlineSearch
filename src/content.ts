@@ -1,6 +1,6 @@
 console.log('Inline Search')
-const divId = "inline-search-div";
-const frameId = "ineline-search-iframe"
+const divId = "inline-search-ext-div";
+const frameId = "inline-search-ext-iframe"
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.inlineSearchExtOpen) {
@@ -31,12 +31,12 @@ function createInlineWindow() {
   document.body.appendChild(container);
 
   const mask = document.createElement('div');
-  mask.className = 'mask';
+  mask.className = 'inline-search-ext-mask';
   mask.style.display = 'none';
   container.appendChild(mask);
 
   const close = document.createElement('span')
-  close.className = 'close'
+  close.className = 'inline-search-ext-close'
   close.innerText = '×'
   close.onclick = e => {
     e.stopPropagation();
@@ -44,6 +44,17 @@ function createInlineWindow() {
     container.style.display = 'none';
   }
   mask.appendChild(close);
+
+  // const back = document.createElement('span')
+  // back.className = 'inline-search-ext-back'
+  // back.innerText = '<'
+  // mask.appendChild(back);
+
+  // const forward = document.createElement('span')
+  // forward.className = 'inline-search-ext-forward'
+  // forward.innerText = '>'
+  // mask.appendChild(forward);
+
 
   container.onmouseenter = e => {
     mask.style.display = 'flex';
@@ -59,6 +70,18 @@ function createInlineWindow() {
   iframe.height = "100%";
 
   container.appendChild(iframe)
+
+  // back.onclick = e => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   iframe.contentWindow.history.back();
+  // }
+
+  // forward.onclick = e => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   iframe.contentWindow.history.forward();
+  // }
 
   return container;
 }
